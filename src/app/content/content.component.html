@@ -1,0 +1,13 @@
+<div class="content">
+ I am your content component
+
+ <form class ="change-user">you can change user from here
+  <input
+    name = "userName"
+    [(ngModel)]="model"
+    type = "text"
+    >
+   <input type= "button" value="try it" (click)="changeUser($event)">
+ </form>
+</div>
+

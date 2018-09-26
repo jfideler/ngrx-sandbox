@@ -24,4 +24,18 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 
 ## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+This resource led to issuing the following commands
+https://www.intertech.com/Blog/ngrx-tutorial-quickly-adding-ngrx-to-your-angular-6-project/
+
+ng add @ngrx/store
+ng add @ngrx/effects
+
+npm install @ngrx/schematics --save-dev
+npm install @ngrx/store @ngrx/effects @ngrx/store-devtools @ngrx/router-store --save
+ng config cli.defaultCollection @ngrx/schematics
+ng generate store State --root --statePath store/reducers --module app.module.ts
+
+then i had to reset the import of 'environments'
+
+ng generate effect store/App --group --root --spec false --module app.module
+
