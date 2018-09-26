@@ -23,3 +23,4 @@ export const metaReducers: MetaReducer<State>[] = !environment.production ? [] :
 export const selectAuthState = createFeatureSelector<fromAuth.State>('auth');
 export const getUserName = createSelector(selectAuthState, fromAuth.getUserName);
 export const getFriendlyName = createSelector(selectAuthState, fromAuth.getFriendlyName);
+export const getProjectId = createSelector(selectAuthState, fromAuth.getProjectId);

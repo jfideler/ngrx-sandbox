@@ -28,6 +28,7 @@ import { AuthEffects } from './store/effects/auth.effects';
     !environment.production ? StoreDevtoolsModule.instrument() : [],
     EffectsModule.forRoot([AppEffects, AuthEffects])
   ],
+  exports: [],
   providers: [],
   bootstrap: [AppComponent]
 })

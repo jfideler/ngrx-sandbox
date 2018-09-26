@@ -1,4 +1,3 @@
-import { Action } from '@ngrx/store';
 import * as authActions from '../actions/auth.actions';
 
 
@@ -6,15 +5,18 @@ import * as authActions from '../actions/auth.actions';
 export interface State {
   userName?: string;
   friendlyName?: string;
+  projectId?: string;
 }
 
 export const initialState: State = {
   userName: null,
-  friendlyName: null
+  friendlyName: null,
+  projectId: '123-ABC'
 };
 
 export const getUserName = (state: State) => state.userName;
 export const getFriendlyName = (state: State) => state.friendlyName;
+export const getProjectId = (state: State) => state.projectId;
 
 export function reducer(state = initialState, action: authActions.AuthActions): State {
   switch (action.type) {

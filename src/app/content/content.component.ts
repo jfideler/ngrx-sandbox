@@ -3,6 +3,7 @@ import { Store } from '@ngrx/store';
 
 import * as fromRoot from '../store/reducers';
 import * as authActions from '../store/actions/auth.actions';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-content',
@@ -10,8 +11,9 @@ import * as authActions from '../store/actions/auth.actions';
 })
 
 export class ContentComponent implements OnInit {
-
+  public projectId$: Observable<string> = this.store.select(fromRoot.getProjectId);
   model = 'new Name?';
+  mode = 'default';
 
   constructor(private store: Store<fromRoot.State>) {}
 
@@ -19,18 +21,4 @@ export class ContentComponent implements OnInit {
 
   }
 
-  updateUser(event: any, user: any) {
-
-    const newUser = user ? user : this.model;
-    this.store.dispatch(new authActions.UpdateAuths());
-  }
-
-  changeUser(event: any, user: any) {
-
-    const newUser = user ? user : this.model;
-    this.store.dispatch(new authActions.SetAuths({
-      userName: newUser,
-      friendlyName: newUser
-    }));
-  }
 }

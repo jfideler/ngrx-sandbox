@@ -1,0 +1,16 @@
+<div>
+  <a (click)="display = ! display">
+    <span *ngIf="!display">[+]</span> <span *ngIf="display">[-]</span>
+  </a>
+<div class="content-detail-panel" *ngIf="display">
+  [detail panel]
+ <div style="padding: 25px;">
+    If you change your username from here, the nav component will find out!
+  </div>
+  <form class="change-user">
+    <input name="userName" [(ngModel)]="model" type="text">
+    <input type="button" value="try it" (click)="changeUser($event)">
+    <input type="button" value="try it nerdy" (click)="updateUser($event)">
+  </form>
+</div>
+</div>

@@ -9,7 +9,7 @@ body {
 }
 
 app-nav {
-  border: 2px solid red;
+  border: 2px solid green;
    padding: 5px;
  }
 
@@ -21,4 +21,33 @@ app-nav {
 .content {
   border: 2px solid green;
   margin-top: 21px;
+}
+
+.content-left {
+  max-width: 250px;
+  display: flex;
+  border: 2px solid #d2d2d2;
+  background-color: #f2f2d2;
+  margin: 21px 0px 0px 12px;
+  font-size: 12px;
+}
+
+.content-left > ul > li {
+  font-style: italic;
+}
+
+.content-toolbar {
+  border: 2px solid greenyellow;
+  font-size: 14px;
+}
+
+.content-data-table {
+  margin-top: 20px;
+  background-color: lightcyan;
+}
+
+.content-data-table > table {
+  border: 1px solid black;
+  display: flex;
+  min-width: 300px;
 }
