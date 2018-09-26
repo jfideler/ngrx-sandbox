@@ -2,7 +2,8 @@ import { Action } from '@ngrx/store';
 
 export enum AuthActionTypes {
   LoadAuths = '[Auth] Load Auths',
-  SetAuths = '[Auth] Set Auths'
+  SetAuths = '[Auth] Set Auths',
+  UpdateAuths = '[Auth] Update Auths'
 }
 
 export class LoadAuths implements Action {
@@ -17,4 +18,12 @@ export class SetAuths implements Action {
   }
 }
 
-export type AuthActions = LoadAuths | SetAuths;
+export class UpdateAuths implements Action {
+  readonly type = AuthActionTypes.UpdateAuths;
+
+  constructor() {
+    console.log('update auths action');
+  }
+}
+
+export type AuthActions = LoadAuths | SetAuths | UpdateAuths;

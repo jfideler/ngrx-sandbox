@@ -19,6 +19,12 @@ export class ContentComponent implements OnInit {
 
   }
 
+  updateUser(event: any, user: any) {
+
+    const newUser = user ? user : this.model;
+    this.store.dispatch(new authActions.UpdateAuths());
+  }
+
   changeUser(event: any, user: any) {
 
     const newUser = user ? user : this.model;

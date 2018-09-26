@@ -23,6 +23,10 @@ export function reducer(state = initialState, action: authActions.AuthActions): 
 
       return handleSetAuths(state, action);
 
+    case authActions.AuthActionTypes.UpdateAuths:
+
+      return state;
+
     default:
 
       return state;
@@ -34,5 +38,11 @@ function handleSetAuths(state: State, action: authActions.SetAuths): State {
     ...state,
     userName: action.payload.userName,
     friendlyName: action.payload.friendlyName
+  };
+}
+
+function handleUpdateAuths(state: State, action: authActions.UpdateAuths): State {
+  return {
+    ...state
   };
 }
