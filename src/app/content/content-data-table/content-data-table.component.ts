@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ContentModel } from '../content.model';
 
@@ -10,10 +10,11 @@ export class ContentDataTableComponent {
   @Input() mode: string;
   @Input() projectId: string;
   @Input() docs$: Observable<ContentModel[]>;
+  @Output() selected: EventEmitter<number> = new EventEmitter();
 
   constructor() {}
 
   onSelected(event: any, id: number) {
-    console.log('selected ', id);
+    this.selected.emit(id);
   }
 }

@@ -21,5 +21,17 @@ export class ContentEffects {
     })
   );
 
+  @Effect()
+  loadMoreDocs$ = this.actions$.pipe(
+    ofType(ContentActionTypes.LoadDocs),
+    switchMap(() => {
+      return this.http.get<any>(`https://swapi.co/api/starships/?page=2`).pipe(
+        map(response => {
+          return new contentActions.SetDocs(response.results);
+        })
+      );
+    })
+  );
+
   constructor(private actions$: Actions, private http: HttpClient) {}
 }

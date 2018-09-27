@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-content-left-panel',
@@ -7,9 +7,15 @@ import { Component, OnInit, Input } from '@angular/core';
 export class ContentLeftPanelComponent implements OnInit {
 
 @Input() projectId: string;
+@Output() select: EventEmitter<any> = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {
+
+  }
+
+  getDocs(choice: number) {
+    this.select.emit(choice);
   }
 }
