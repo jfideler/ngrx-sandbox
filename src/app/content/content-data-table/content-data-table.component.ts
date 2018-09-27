@@ -7,11 +7,13 @@ import { ContentModel } from '../content.model';
   templateUrl: './content-data-table.component.html'
 })
 export class ContentDataTableComponent {
+  @Input() mode: string;
+  @Input() projectId: string;
+  @Input() docs$: Observable<ContentModel[]>;
 
-@Input() mode: string;
-@Input() projectId: string;
-@Input() docs$: Observable<ContentModel[]>;
+  constructor() {}
 
-constructor() {}
-
+  onSelected(event: any, id: number) {
+    console.log('selected ', id);
+  }
 }

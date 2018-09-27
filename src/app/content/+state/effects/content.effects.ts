@@ -8,6 +8,7 @@ import * as contentActions from '../actions/content.actions';
 
 @Injectable()
 export class ContentEffects {
+
   @Effect()
   loadDocs$ = this.actions$.pipe(
     ofType(ContentActionTypes.LoadDocs),

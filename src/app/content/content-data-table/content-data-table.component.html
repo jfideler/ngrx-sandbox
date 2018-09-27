@@ -1,11 +1,12 @@
 <div class="content-data-table">
-  <small>[data-table {{mode}} mode]</small>
+  <small>[data-table]</small> {{mode}} mode
   <hr />
 <h2>First 10 docs from API</h2>
 <table>
   <thead>
     <tr>
       <th>ID</th>
+      <th>...</th>
       <th>Name</th>
       <th>Model</th>
     </tr>
@@ -13,7 +14,8 @@
   <tbody>
     <tr *ngFor="let doc of docs$ | async">
       <td style="width:10%">{{doc.id}}</td>
-      <td style="width:30%"><a href="{{doc.id}}/detail">{{doc.name}}</a></td>
+      <td><input type="checkbox" (click)="onSelected($event, doc.id)"></td>
+      <td style="width:30%">{{doc.name}}</td>
       <td style="width:60%">{{doc.model}}</td>
     </tr>
   </tbody>
