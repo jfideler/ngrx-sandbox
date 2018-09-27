@@ -4,15 +4,20 @@
   </div>
 
   <ng-container *appaLet="projectId$ | async as projectId">
-    <div> <app-content-toolbar [mode]='mode' [projectId]="projectId"></app-content-toolbar></div>
+    <div>
+      <app-content-toolbar [mode]='mode' [projectId]="projectId"></app-content-toolbar>
+    </div>
+    <div>
+        <app-content-detail-panel [model]="model"></app-content-detail-panel>
+      </div>
     <div>
       <app-content-left-panel [projectId]="projectId"></app-content-left-panel>
     </div>
 
-   <div>
-     <app-content-data-table [mode]="mode"></app-content-data-table>
-  </div>
-<div><app-content-detail-panel [model]="model"></app-content-detail-panel></div>
+    <div>
+      <app-content-data-table [docs$]=content$ [mode]="mode"></app-content-data-table>
+    </div>
+
 
   </ng-container>
 

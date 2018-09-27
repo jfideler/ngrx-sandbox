@@ -1,10 +1,22 @@
 <div class="content-data-table">
-  <small>[{{mode}} mode]</small>
-  <table>
-      <tr><th>mama</th><th>papa</th><th>baby</th></tr>
-      <tr><td>1</td><td>1.1</td><td>3</td></tr>
-      <tr><td>2</td><td>2.1</td><td>3.1</td></tr>
-    <tr><td>3</td><td>2.2</td><td>3.z</td></tr>
-  </table>
+  <small>[data-table {{mode}} mode]</small>
+  <hr />
+<h2>First 10 docs from API</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Model</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let doc of docs$ | async">
+      <td style="width:10%">{{doc.id}}</td>
+      <td style="width:30%"><a href="{{doc.id}}/detail">{{doc.name}}</a></td>
+      <td style="width:60%">{{doc.model}}</td>
+    </tr>
+  </tbody>
+</table>
 
 </div>

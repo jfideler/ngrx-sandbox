@@ -43,11 +43,29 @@ app-nav {
 
 .content-data-table {
   margin-top: 20px;
-  background-color: lightcyan;
+  background-color: #daddda;
 }
 
 .content-data-table > table {
   border: 1px solid black;
-  display: flex;
-  min-width: 300px;
+  /* display: flex; */
+}
+
+.content-data-table > table > thead {
+  border: 2px solid black;
+  background-color: #d8f7d8;
+  /* display: flex; */
+}
+
+.content-detail-panel {
+  border: 2px solid #bada55;
+  background-color: #d8f7d8;
+  max-width: 350px;
+  padding: 5px;
+  font-size: 13px;
+}
+
+.content-detail-panel > small {
+  padding-top: 12px;
+  font-size: 14px;
 }
