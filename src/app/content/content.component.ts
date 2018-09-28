@@ -38,10 +38,8 @@ export class ContentComponent implements OnChanges {
   selectSet(event: any) {
 
     if ( event === 1) {
-      console.log('page 1...');
       this.store.dispatch(new LoadDocs());
     } else {
-      console.log('page 2...');
       this.store.dispatch(new LoadMoreDocs());
     }
 

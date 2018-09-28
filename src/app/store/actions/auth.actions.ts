@@ -14,7 +14,6 @@ export class SetAuths implements Action {
   readonly type = AuthActionTypes.SetAuths;
 
   constructor(public payload: any) {
-    console.log('set auths action p: ', payload);
   }
 }
 
@@ -22,7 +21,6 @@ export class UpdateAuths implements Action {
   readonly type = AuthActionTypes.UpdateAuths;
 
   constructor() {
-    console.log('update auths action');
   }
 }
 
