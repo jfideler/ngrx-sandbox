@@ -23,7 +23,7 @@ export class ContentEffects {
 
   @Effect()
   loadMoreDocs$ = this.actions$.pipe(
-    ofType(ContentActionTypes.LoadDocs),
+    ofType(ContentActionTypes.LoadMoreDocs),
     switchMap(() => {
       return this.http.get<any>(`https://swapi.co/api/starships/?page=2`).pipe(
         map(response => {

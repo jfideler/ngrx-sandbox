@@ -5,7 +5,8 @@ import {ContentModel} from '../../content.model';
 export enum ContentActionTypes {
   LoadDocs = '[Content] Load Docs',
   SetDocs = '[Content] Set Docs',
-  SetDocId = '[Content] Set DocId'
+  SetDocId = '[Content] Set DocId',
+  LoadMoreDocs = '[Content] Load MoreDocs'
 }
 
 export class LoadDocs implements Action {
@@ -13,7 +14,7 @@ export class LoadDocs implements Action {
 }
 
 export class LoadMoreDocs implements Action {
-  readonly type = ContentActionTypes.LoadDocs;
+  readonly type = ContentActionTypes.LoadMoreDocs;
 }
 
 export class SetDocs implements Action {

@@ -4,12 +4,12 @@ import { ContentModel } from '../../content.model';
 
 export interface State {
   allDocs: ContentModel[];
-  docId: number;
+  doc: ContentModel;
 }
 
 const initialState: State = {
   allDocs: [],
-  docId: -1
+  doc: null
 };
 
 export function reducer(state = initialState, action: ContentActions): State {
@@ -18,7 +18,9 @@ export function reducer(state = initialState, action: ContentActions): State {
       return handleSetDocs(state, action);
 
     case ContentActionTypes.SetDocId:
-      return handleSetDocId(state, action);
+      const result = handleSetDocId(state, action);
+      result.doc = result.allDocs.filter(f => f.id === action.payload)[0];
+      return result;
 
     default:
       return state;
@@ -40,4 +42,4 @@ function handleSetDocId(state, action: SetDocId): State {
 }
 
 export const getAllDocs = (state: State) => state.allDocs;
-// export const getDocId = (state: State) => state.docId;
+export const getDocId = (state: State) => state.doc;

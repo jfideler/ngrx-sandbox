@@ -5,7 +5,7 @@ import * as fromRoot from '../../../store/reducers';
 
 export interface ContentState {
   docs: fromContent.State;
-  // docId: any;
+  doc: fromContent.State;
 }
 
 export interface State extends fromRoot.State {
@@ -13,14 +13,14 @@ export interface State extends fromRoot.State {
 }
 
 export const reducers: ActionReducerMap<ContentState> = {
-  docs: fromContent.reducer
-  // docId: fromContent.getDocId
+  docs: fromContent.reducer,
+  doc: fromContent.reducer
 };
 
 export const selectContentState = createFeatureSelector<ContentState>('content');
 export const selectDocs = createSelector(selectContentState, state => state.docs);
 export const getAllDocs = createSelector(selectDocs, fromContent.getAllDocs);
-// xport const getDocId = createSelector(fromContent.getDocId);
+export const getDocId = createSelector(selectContentState, state => state.doc);
 
 
 export const getAllDocsWithId = createSelector(getAllDocs, allDocs => {
@@ -36,12 +36,9 @@ export const getAllDocsWithId = createSelector(getAllDocs, allDocs => {
   return allDocs;
 });
 
-export const getCurrentDoc = createSelector(getAllDocsWithId, (docs) => {
-  if (docs && docs.length > 0 ) {
-    const id = 23;
-    if (id >= 0) {
-      return docs.find(s => s.id === id);
-    }
+export const getCurrentDoc = createSelector(getDocId, (docs) => {
+  if (docs ) {
+      return docs.doc;
   }
 
   return null;

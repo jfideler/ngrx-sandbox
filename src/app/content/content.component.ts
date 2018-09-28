@@ -35,24 +35,20 @@ export class ContentComponent implements OnChanges {
     this.store.dispatch(new LoadDocs());
   }
 
-  select(event: any) {
+  selectSet(event: any) {
 
     if ( event === 1) {
       console.log('page 1...');
-      this.content$ = this.store.select(fromContent.getAllDocsWithId);
       this.store.dispatch(new LoadDocs());
     } else {
       console.log('page 2...');
-      this.content$ = this.store.select(fromContent.getAllDocsWithId);
       this.store.dispatch(new LoadMoreDocs());
     }
 
+    this.content$ = this.store.select(fromContent.getAllDocsWithId);
   }
 
   selectDoc(event: any) {
-    console.log('got selected ', event);
-    // this.document$ = this.store.select(fromContent.getCurrentDoc);
-    // this.store.dispatch(new LoadDocs());
 
     this.store.dispatch(new SetDocId(event));
     this.document$ = this.store.select(fromContent.getCurrentDoc);
