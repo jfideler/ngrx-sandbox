@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import * as fromRoot from './store/reducers';
-import * as authActions from './store/actions/auth.actions';
+import * as fromRoot from './+state/reducers';
+import * as authActions from './+state/actions/auth.actions';
 import { Observable } from 'rxjs';
 @Component({
   selector: 'app-root',

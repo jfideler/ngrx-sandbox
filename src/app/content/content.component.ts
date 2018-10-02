@@ -1,7 +1,7 @@
 import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import * as fromRoot from '../store/reducers';
+import * as fromRoot from '../+state/reducers';
 import * as fromContent from './+state/reducers';
 import { Observable } from 'rxjs';
 import { ContentModel } from './content.model';

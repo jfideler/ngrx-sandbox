@@ -6,13 +6,13 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app.routing.module';
 import { ContentModule } from './content/content.module';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './store/reducers';
+import { reducers, metaReducers } from './+state/reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
-import { AppEffects } from './store/effects/app.effects';
+import { AppEffects } from './+state/effects/app.effects';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { AuthEffects } from './store/effects/auth.effects';
+import { AuthEffects } from './+state/effects/auth.effects';
 
 @NgModule({
   declarations: [
