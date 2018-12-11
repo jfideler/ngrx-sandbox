@@ -1,11 +1,12 @@
-import { Component, OnInit, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, OnInit, OnChanges, SimpleChanges, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 
 import * as fromRoot from '../+state/reducers';
-import * as fromContent from './+state/reducers';
+import * as fromContent from '../+state/reducers';
+import * as fromContentSelectors from '../+state/selectors/content.selectors' ;
 import { Observable } from 'rxjs';
 import { ContentModel } from './content.model';
-import { LoadDocs, LoadMoreDocs, SetDocId } from './+state/actions/content.actions';
+import { LoadDocs, LoadMoreDocs, SetDocId } from '../+state/actions/content.actions';
 
 @Component({
   selector: 'app-content',
@@ -14,6 +15,7 @@ import { LoadDocs, LoadMoreDocs, SetDocId } from './+state/actions/content.actio
 
 export class ContentComponent implements OnChanges {
 
+  @Input() username: string;
   public projectId$: Observable<string> = this.store.select(fromRoot.getProjectId);
   content$: Observable<ContentModel[]>;
   document$: Observable<ContentModel>;
@@ -31,7 +33,7 @@ export class ContentComponent implements OnChanges {
 
   Init(): void {
 
-    this.content$ = this.store.select(fromContent.getAllDocsWithId);
+    this.content$ = this.store.select(fromContentSelectors.getAllDocsWithId);
     this.store.dispatch(new LoadDocs());
   }
 
@@ -43,13 +45,13 @@ export class ContentComponent implements OnChanges {
       this.store.dispatch(new LoadMoreDocs());
     }
 
-    this.content$ = this.store.select(fromContent.getAllDocsWithId);
+    this.content$ = this.store.select(fromContentSelectors.getAllDocsWithId);
   }
 
   selectDoc(event: any) {
 
     this.store.dispatch(new SetDocId(event));
-    this.document$ = this.store.select(fromContent.getCurrentDoc);
+    this.document$ = this.store.select(fromContentSelectors.getCurrentDoc);
   }
 
 }

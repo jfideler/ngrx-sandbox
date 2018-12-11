@@ -2,10 +2,14 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.change-user {
-  margin: 10px;
-  font-weight: 450;
-  font-size: 12px;
+.field {
+  font-weight: 700;
+}
+
+.container {
+  padding: 2px;
+  border: 2px solid green;
+  background-color: #f2f2f2;
 }
 
 app-nav {
@@ -51,12 +55,23 @@ app-nav > small {
     }
 
     &-list > li {
+
       font-style: italic;
-      font-size: 13px;
+      font-size: 14px;
+      margin: 4px;
+    }
+
+    &-list > li > a {
+      background-color: yellow;
+
+    }
+
+    &-list > li > a:hover{
+      background-color: yellowgreen;
     }
   }
 
-  &-toolbar {
+  &-child {
     border: 2px solid #bada55;
     font-size: 14px;
     background-color: #d8f7d8;

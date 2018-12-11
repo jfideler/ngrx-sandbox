@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
+import { ContentModel } from 'src/app/content/content.model';
 
-import {ContentModel} from '../../content.model';
 
 export enum ContentActionTypes {
   LoadDocs = '[Content] Load Docs',

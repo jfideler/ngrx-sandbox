@@ -2,6 +2,7 @@ import { ActionReducer, ActionReducerMap, createFeatureSelector, createSelector,
 import { StoreRouterConnectingModule, routerReducer, RouterReducerState, RouterStateSerializer } from '@ngrx/router-store';
 
 import * as fromAuth from './auth.reducer';
+import * as fromContent from '../../+state/reducers/content.reducer';
 import { Params, RouterStateSnapshot } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
@@ -9,11 +10,20 @@ import { environment } from '../../../environments/environment';
 export interface State {
   auth: fromAuth.State;
   router: RouterReducerState<RouterStateUrl>;
+  docs: fromContent.State;
+  doc: fromContent.State;
+}
+
+export interface ContentState {
+  docs: fromContent.State;
+  doc: fromContent.State;
 }
 
 export const reducers: ActionReducerMap<State> = {
   auth: fromAuth.reducer,
-  router: routerReducer
+  router: routerReducer,
+  docs: fromContent.reducer,
+  doc: fromContent.reducer
 };
 
 export const metaReducers: MetaReducer<State>[] = !environment.production ? [] : [];

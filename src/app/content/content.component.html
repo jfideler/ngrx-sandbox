@@ -1,25 +1,20 @@
-<ng-container *appaLet="projectId$ | async as projectId">
-
-  <div>
-    <app-content-toolbar [mode]='mode' [projectId]="projectId"></app-content-toolbar>
-  </div>
-
-  <div>
-    <small>[content component]</small>
-  </div>
-
-  <div class="content">
-
+<div class="container">
+  <h3>Content Component</h3>
+  <ng-container *appaLet="(projectId$ | async) as projectId">
     <div>
-      <app-content-left-panel [projectId]="projectId" (select)="selectSet($event)"></app-content-left-panel>
-    </div>
+      <app-content-toolbar
+        [mode]="mode"
+        [projectId]="projectId"
+        [user]="model"
+        [username]="username">
+      </app-content-toolbar></div>
 
-    <div>
-      <app-content-data-table [docs$]=content$ [mode]="mode" (selected)="selectDoc($event)"></app-content-data-table>
-    </div>
+    <div class="content">
+      <div><app-content-left-panel [projectId]="projectId" (select)="selectSet($event)"></app-content-left-panel></div>
 
-    <div>
-      <app-content-detail-panel [model]="document$ | async" [user]="model"></app-content-detail-panel>
+      <div><app-content-data-table [docs$]="content$" [mode]="mode" (selected)="selectDoc($event)"></app-content-data-table></div>
+
+      <div><app-content-detail-panel [model]="document$ | async"></app-content-detail-panel></div>
     </div>
-  </div>
-</ng-container>
+  </ng-container>
+</div>

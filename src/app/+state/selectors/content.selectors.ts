@@ -1,21 +1,12 @@
 import { createSelector, createFeatureSelector, ActionReducerMap } from '@ngrx/store';
 
-import * as fromContent from './content.reducer';
-import * as fromRoot from '../../../+state/reducers';
+import * as fromContent from '../reducers/content.reducer';
+import * as fromRoot from '../reducers';
 
 export interface ContentState {
   docs: fromContent.State;
   doc: fromContent.State;
 }
-
-export interface State extends fromRoot.State {
-  content: ContentState;
-}
-
-export const reducers: ActionReducerMap<ContentState> = {
-  docs: fromContent.reducer,
-  doc: fromContent.reducer
-};
 
 export const selectContentState = createFeatureSelector<ContentState>('content');
 export const selectDocs = createSelector(selectContentState, state => state.docs);

@@ -1,8 +1,4 @@
 import { Component, OnInit, Input, OnChanges, SimpleChanges } from '@angular/core';
-import { Store } from '@ngrx/store';
-
-import * as fromRoot from '../../+state/reducers';
-import * as authActions from '../../+state/actions/auth.actions';
 import { ContentModel } from '../content.model';
 
 @Component({
@@ -17,7 +13,8 @@ export class ContentDetailPanelComponent implements OnInit, OnChanges {
 @Input() model: ContentModel;
 display = false;
 
-constructor(private store: Store<fromRoot.State>) {}
+constructor() {}
+
   ngOnInit(): void {
 
   }
@@ -28,18 +25,5 @@ constructor(private store: Store<fromRoot.State>) {}
   }
 
 
-  updateUser(event: any, user: any) {
 
-    const newUser = user ? user : this.user;
-    this.store.dispatch(new authActions.UpdateAuths());
-  }
-
-  changeUser(event: any, user: any) {
-
-    const newUser = user ? user : this.user;
-    this.store.dispatch(new authActions.SetAuths({
-      userName: newUser,
-      friendlyName: newUser
-    }));
-  }
 }

@@ -10,8 +10,8 @@ import { ContentDataTableComponent } from './content-data-table/content-data-tab
 import { ContentDetailPanelComponent } from './content-detail-panel/content-detail-panel.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { ContentEffects } from './+state/effects/content.effects';
-import * as fromContent from './+state/reducers/index';
+import { ContentEffects } from '../+state/effects/content.effects';
+import * as fromContent from '../+state/reducers';
 
 @NgModule({
   imports: [

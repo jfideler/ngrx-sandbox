@@ -1,4 +1,12 @@
-<div class="content-toolbar">
-  [toolbar] mode: <small>{{mode}}</small> proj: <small>{{projectId}}</small>
+<div class="content-child" style="width: 100%; display: inline-block">
+  [Toolbar] mode:
+  <input type="checkbox" value="change" (click)="onModeChange($event)">
+  <span class="field">{{mode}}</span>
+  projectId: <span class="field">{{projectId}}</span>
 
+  <div style="float: right"> Edit user
+      <input name="userName" [(ngModel)]="username" type="text">
+      <input type="button" value="[try it]" (click)="changeUser($event)">
+      <input type="button" value="[try it nerdy]" (click)="updateUser($event)">
+  </div>
 </div>

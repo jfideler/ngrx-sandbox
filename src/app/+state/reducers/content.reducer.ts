@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 import { ContentActionTypes, SetDocs, ContentActions, SetDocId } from '../actions/content.actions';
-import { ContentModel } from '../../content.model';
+import { ContentModel } from '../../content/content.model';
 
 export interface State {
   allDocs: ContentModel[];

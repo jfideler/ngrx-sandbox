@@ -1,7 +1,7 @@
 
 <h1>test this!</h1>
 <app-nav [username]='name$ | async'></app-nav>
-<app-content></app-content>
+<app-content [username]='name$ | async'></app-content>
 <router-outlet></router-outlet>
 <!-- <div [hidden]="true">Running in {{env}}</div> -->
 
