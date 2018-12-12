@@ -33,5 +33,16 @@ export class ContentEffects {
     })
   );
 
+  @Effect()
+  loadDAllocs$ = this.actions$.pipe(
+    ofType(ContentActionTypes.LoadAllDocs),
+    switchMap(() => {
+      return this.http.get<any>(`https://swapi.co/api/starships/`).pipe(
+        map(response => {
+          return new contentActions.SetDocs(response.results);
+        })
+      );
+    })
+  );
   constructor(private actions$: Actions, private http: HttpClient) {}
 }

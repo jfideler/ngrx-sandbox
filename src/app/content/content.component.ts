@@ -1,12 +1,12 @@
 import { Component, OnInit, OnChanges, SimpleChanges, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 
-import * as fromRoot from '../+state/reducers';
-import * as fromContent from '../+state/reducers';
+import * as fromRoot from '../+state/selectors/auth.selectors';
+import * as fromState from '../+state/reducers';
 import * as fromContentSelectors from '../+state/selectors/content.selectors' ;
 import { Observable } from 'rxjs';
 import { ContentModel } from './content.model';
-import { LoadDocs, LoadMoreDocs, SetDocId } from '../+state/actions/content.actions';
+import { LoadDocs, LoadMoreDocs, SetDocId, LoadAllDocs } from '../+state/actions/content.actions';
 
 @Component({
   selector: 'app-content',
@@ -23,7 +23,7 @@ export class ContentComponent implements OnChanges {
   mode = 'doc-list';
 
 
-  constructor(private store: Store<fromRoot.State>) {
+  constructor(private store: Store<fromState.State>) {
     this.Init();
   }
 
@@ -39,10 +39,22 @@ export class ContentComponent implements OnChanges {
 
   selectSet(event: any) {
 
-    if ( event === 1) {
-      this.store.dispatch(new LoadDocs());
-    } else {
-      this.store.dispatch(new LoadMoreDocs());
+    switch (event) {
+      case 1:
+        this.store.dispatch(new LoadDocs());
+        break;
+
+      case 2:
+        this.store.dispatch(new LoadMoreDocs());
+        break;
+
+      case 3:
+      this.store.dispatch(new LoadAllDocs());
+        break;
+
+      default:
+        break;
+
     }
 
     this.content$ = this.store.select(fromContentSelectors.getAllDocsWithId);

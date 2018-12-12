@@ -4,9 +4,10 @@ import { ContentModel } from 'src/app/content/content.model';
 
 export enum ContentActionTypes {
   LoadDocs = '[Content] Load Docs',
+  LoadMoreDocs = '[Content] Load MoreDocs',
+  LoadAllDocs = '[Content] Load AllDocs',
   SetDocs = '[Content] Set Docs',
-  SetDocId = '[Content] Set DocId',
-  LoadMoreDocs = '[Content] Load MoreDocs'
+  SetDocId = '[Content] Set DocId'
 }
 
 export class LoadDocs implements Action {
@@ -15,6 +16,10 @@ export class LoadDocs implements Action {
 
 export class LoadMoreDocs implements Action {
   readonly type = ContentActionTypes.LoadMoreDocs;
+}
+
+export class LoadAllDocs implements Action {
+  readonly type = ContentActionTypes.LoadAllDocs;
 }
 
 export class SetDocs implements Action {
@@ -28,4 +33,4 @@ export class SetDocId implements Action {
 
   constructor(public payload: number) {}
 }
-export type ContentActions = LoadDocs | LoadMoreDocs | SetDocId | SetDocs;
+export type ContentActions = LoadDocs | LoadMoreDocs | LoadAllDocs | SetDocId | SetDocs;

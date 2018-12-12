@@ -54,11 +54,7 @@ export class CustomSerializer implements RouterStateSerializer<RouterStateUrl> {
     return { url, params, queryParams };
   }
 }
-// Auth selectors
-export const selectAuthState = createFeatureSelector<fromAuth.State>('auth');
-export const getUserName = createSelector(selectAuthState, fromAuth.getUserName);
-export const getFriendlyName = createSelector(selectAuthState, fromAuth.getFriendlyName);
-export const getProjectId = createSelector(selectAuthState, fromAuth.getProjectId);
+
 
 // Reducer selectors
 export const selectReducerState = createFeatureSelector<RouterReducerState<RouterStateUrl>>('router');

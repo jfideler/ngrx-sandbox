@@ -17,6 +17,8 @@ constructor() {}
 
   ngOnInit(): void {
 
+    this.model = this.model ? this.model : new ContentModel();
+
   }
 
   ngOnChanges(changes: SimpleChanges): void {
