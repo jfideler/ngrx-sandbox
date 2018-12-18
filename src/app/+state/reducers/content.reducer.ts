@@ -13,13 +13,15 @@ const initialState: State = {
 };
 
 export function reducer(state = initialState, action: ContentActions): State {
+  let result = null;
   switch (action.type) {
     case ContentActionTypes.SetDocs:
-      return handleSetDocs(state, action);
+      result = handleSetDocs(state, action);
+      return result;
 
     case ContentActionTypes.SetDocId:
-      const result = handleSetDocId(state, action);
-      result.doc = result.allDocs.filter(f => f.id === action.payload)[0];
+      result = handleSetDocId(state, action);
+      result.doc = new ContentModel(result.allDocs.filter(f => f.id === action.payload)[0]);
       return result;
 
     default:
@@ -30,7 +32,7 @@ export function reducer(state = initialState, action: ContentActions): State {
 function handleSetDocs(state, action: SetDocs): State {
   return {
     ...state,
-    allDocs: action.payload
+    allDocs: Object.assign([], action.payload)
   };
 }
 

@@ -1,8 +1,8 @@
-<div class="content-detail-panel">
+<div [formGroup] = 'detailForm' class="content-detail-panel">
   <a (click)="display = !display">
     <span *ngIf="!display">[+] <small>detail panel...</small></span> <span *ngIf="display">[X]</span>
   </a>
-  <div *ngIf="display">
+  <div class="container" *ngIf="display">
     <div class="content-detail-panel-edit" *ngIf="model.id">
       [edit here] <strong>id:</strong><small>{{ model.id }}</small>
       <div>
@@ -18,6 +18,13 @@
         <strong>manufacturer:</strong> <small>{{ model.manufacturer }}</small
         >}
       </div>
+    </div>
+    <span><a (click)="addOne()">[+]</a></span>
+    <div *ngIf="model.id">
+    <div  *ngFor="let event of model.detailEvents; let index = index">
+      <!-- <div formControlName="event.id">{{event.displayId}}-{{event.description}}<a (click)="removeOne(event.id)">[-]</a></div> -->
+      <div>{{event.displayId}}-{{event.description}}<a (click)="removeOne(event.id)">[-]</a></div>
+    </div>
     </div>
   </div>
 </div>

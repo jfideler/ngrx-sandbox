@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { ContentModel } from '../content.model';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-content-data-table',

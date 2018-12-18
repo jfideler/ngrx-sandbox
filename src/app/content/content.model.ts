@@ -10,12 +10,27 @@ export class ContentModel {
   crew: string;
   passengers: string;
   starship_class: string;
+  detailEvents: DetailEvent[];
 
   constructor(data: any = null) {
 
     if (data) {
-      Object.assign(data);
+      Object.assign(this, data);
     }
 
+    this.detailEvents = [];
+  }
+}
+
+export class DetailEvent {
+  id: number;
+  displayId: number;
+  description: string;
+
+  constructor(data: any = null) {
+
+    if (data) {
+      Object.assign(this, data);
+    }
   }
 }

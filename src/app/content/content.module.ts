@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { ContentComponent } from './content.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ContentLeftPanelComponent } from './content-left-panel/content-left-panel.component';
 import { SharedModule } from '../shared/shared.module';
@@ -16,6 +16,7 @@ import * as fromContent from '../+state/reducers';
 @NgModule({
   imports: [
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     CommonModule,
     SharedModule,

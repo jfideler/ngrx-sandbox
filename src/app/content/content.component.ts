@@ -7,6 +7,7 @@ import * as fromContentSelectors from '../+state/selectors/content.selectors' ;
 import { Observable } from 'rxjs';
 import { ContentModel } from './content.model';
 import { LoadDocs, LoadMoreDocs, SetDocId, LoadAllDocs } from '../+state/actions/content.actions';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-content',
@@ -16,6 +17,7 @@ import { LoadDocs, LoadMoreDocs, SetDocId, LoadAllDocs } from '../+state/actions
 export class ContentComponent implements OnChanges {
 
   @Input() username: string;
+  contentForm: FormGroup = new FormGroup({});
   public projectId$: Observable<string> = this.store.select(fromRoot.getProjectId);
   content$: Observable<ContentModel[]>;
   document$: Observable<ContentModel>;
@@ -25,6 +27,12 @@ export class ContentComponent implements OnChanges {
 
   constructor(private store: Store<fromState.State>) {
     this.Init();
+
+
+    this.contentForm.valueChanges.subscribe(value => {
+      // this.store.dispatch(new SetHealthAction(flattened));
+      console.log('form changed ', value);
+    });
   }
 
   ngOnChanges(changes: SimpleChanges): void {
