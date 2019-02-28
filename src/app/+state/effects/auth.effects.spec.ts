@@ -6,6 +6,7 @@ import { AuthEffects } from './auth.effects';
 import { HttpClient, HttpHandler } from '@angular/common/http';
 
 describe('AuthEffects', () => {
+  // tslint:disable-next-line:prefer-const
   let actions$: Observable<any>;
   let effects: AuthEffects;
 
