@@ -18,6 +18,7 @@ export class ContentComponent implements OnChanges {
 
   @Input() username: string;
   contentForm: FormGroup = new FormGroup({});
+// tslint:disable-next-line: deprecation
   public projectId$: Observable<string> = this.store.select(fromRoot.getProjectId);
   content$: Observable<ContentModel[]>;
   document$: Observable<ContentModel>;
@@ -41,6 +42,7 @@ export class ContentComponent implements OnChanges {
 
   Init(): void {
 
+// tslint:disable-next-line: deprecation
     this.content$ = this.store.select(fromContentSelectors.getAllDocsWithId);
     this.store.dispatch(new LoadDocs());
   }
@@ -65,12 +67,14 @@ export class ContentComponent implements OnChanges {
 
     }
 
+// tslint:disable-next-line: deprecation
     this.content$ = this.store.select(fromContentSelectors.getAllDocsWithId);
   }
 
   selectDoc(event: any) {
 
     this.store.dispatch(new SetDocId(event));
+// tslint:disable-next-line: deprecation
     this.document$ = this.store.select(fromContentSelectors.getCurrentDoc);
   }
 

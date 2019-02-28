@@ -3,6 +3,7 @@ import { provideMockActions } from '@ngrx/effects/testing';
 import { Observable } from 'rxjs';
 
 import { AuthEffects } from './auth.effects';
+import { HttpClient, HttpHandler } from '@angular/common/http';
 
 describe('AuthEffects', () => {
   let actions$: Observable<any>;
@@ -11,6 +12,8 @@ describe('AuthEffects', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
       providers: [
+        HttpClient,
+        HttpHandler,
         AuthEffects,
         provideMockActions(() => actions$)
       ]
