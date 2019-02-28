@@ -10,18 +10,14 @@ import { ContentLeftPanelComponent } from './content/content-left-panel/content-
 import { ContentDataTableComponent } from './content/content-data-table/content-data-table.component';
 import { ContentDetailPanelComponent } from './content/content-detail-panel/content-detail-panel.component';
 import { SharedModule } from './shared/shared.module';
-import { Store, StateObservable, StoreModule} from '@ngrx/store';
+import { Store, StoreModule} from '@ngrx/store';
 import { reducers } from '../../src/app/+state/reducers';
-
-export class DummyStore {
-  select: () => {};
-}
-export class DummyReducerManager {
-  addFeatures: () => {};
-}
+import { of } from 'rxjs';
+import * as fromState from './+state/reducers';
 
 let fixture: ComponentFixture<AppComponent>;
-let store: Store<any> ;
+let store: Store<fromState.State> ;
+let component: AppComponent;
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -51,21 +47,21 @@ describe('AppComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(AppComponent);
     store = TestBed.get(Store);
+    component =  fixture.componentInstance;
     // fixture.detectChanges();
   });
 
   it('should create the app', async(() => {
-    const app = fixture.debugElement.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   }));
 
   it(`should have as title 'sandbox'`, async(() => {
-    const app = fixture.debugElement.componentInstance;
-    expect(app.title).toEqual('sandbox-app');
+    expect(component.title).toEqual('sandbox-app');
   }));
 
   it('should render title in a h1 tag', async(() => {
-
+    spyOn(store, 'select');
+    component.ngOnInit();
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('h1').textContent).toContain(':The Agony & ngrx-tasy:');
   }));

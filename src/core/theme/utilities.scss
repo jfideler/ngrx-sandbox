@@ -1,0 +1,268 @@
+.base-container {
+  width: 100%;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+.primary-container {
+  @extend .base-container;
+  max-width: $BREAKPOINT-1280;
+}
+.secondary-container {
+  @extend .primary-container;
+  max-width: 852px;
+  margin-top: 25px;
+  margin-bottom: 42px;
+}
+// Support for Mobile Safari and FxFlexIssue
+[fxlayout="row"] {
+  flex: 1 !important;
+}
+/* ---------------------------------------------------- */
+// @media screen and (min-width: $BREAKPOINT-600) {
+//   .primary-container {
+//     padding: 0 24px;
+//   }
+//   .secondary-container {
+//     margin-top: 40px;
+//     margin-bottom: 98px;
+//   }
+//   .push {
+//     min-height: 90vh;
+//   }
+// }
+
+//GRADIENTS
+@mixin golden-gradient() {
+  background: -moz-linear-gradient(45deg,  rgba(67,57,40,0.2) 0%, rgba(106,70,9,0.3) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg,  rgba(67,57,40,0.2) 0%,rgba(106,70,9,0.3) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg,  rgba(67,57,40,0.2) 0%,rgba(106,70,9,0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#33433928', endColorstr='#4d6a4609',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+@mixin primary-gradient() {
+  background: #00bfa5; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #00bfa5 20%, #5ba5d1 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #00bfa5 20%,#5ba5d1 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #00bfa5 20%,#5ba5d1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00bfa5', endColorstr='#5ba5d1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@mixin score-very-low-gradient() {
+  background: #D90808; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #D90808 20%, #DE4F04 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #D90808 20%,#DE4F04 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #D90808 20%,#DE4F04 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#D90808', endColorstr='#DE4F04',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@mixin score-low-gradient() {
+  background: #CB0549; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #CB0549 20%, #F0238A 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #CB0549 20%,#F0238A 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #CB0549 20%,#F0238A 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CB0549', endColorstr='#F0238A',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@mixin score-medium-gradient() {
+  background: #CDDC1B; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #CDDC1B 20%, #75CC0E 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #CDDC1B 20%,#75CC0E 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #CDDC1B 20%,#75CC0E 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CDDC1B', endColorstr='#75CC0E',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@mixin score-high-gradient() {
+  background: #75CC0E; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #75CC0E 20%, #00BFA5 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #75CC0E 20%,#00BFA5 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #75CC0E 20%,#00BFA5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#75CC0E', endColorstr='#00BFA5',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+@mixin score-very-high-gradient() {
+  background: #00BFA5; /* Old browsers */
+  background: -moz-linear-gradient(45deg, #00BFA5 20%, #5BA5D1 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(45deg, #00BFA5 20%,#5BA5D1 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(45deg, #00BFA5 20%, #5BA5D1 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00BFA5', endColorstr='#5BA5D1',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+// ADD MY CLASS TO DIV TO APPLY A GREEN AND TEAL BACKGROUND
+.primary-gradient {
+  @include primary-gradient();
+}
+
+.score-very-low-gradient {
+  @include score-very-low-gradient();
+}
+
+.score-low-gradient {
+  @include score-low-gradient();
+}
+
+.score-medium-gradient {
+  @include score-medium-gradient();
+}
+
+.score-high-gradient {
+  @include score-high-gradient();
+}
+
+.score-very-high-gradient {
+  @include score-very-high-gradient();
+}
+
+// ADD MY CLASS TO DIV TO APPLY A GOLDEN FILTER TO ITS BG IMAGE
+.golden-overlay-gradient {
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    @include golden-gradient();
+  }
+  > div {
+    position: relative;
+    z-index: 1;
+  }
+  // VARIABLE CLASS FOR DIVs WITH BACKGROUND IMAGES THAT SCALE
+  // I NEED TO BE A CLASSED DIV WITH golden-overlay-gradient variable-height
+  // I NEED A BACKGROUND IMAGE
+  // MY PARENT NEEDS TO BE POSITIONED RELATIVE
+  // MY HEIGHT IS SET HERE AT 25% BUT CAN BE OVER WRITTEN
+  // IN COMPONENT FILE
+  // WITH OUT ME MY GRADIENT WILL SPILL OVER MY IMAGE
+  &.variable-height {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    min-height: 225px;
+    width: 100%;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    @media screen and (min-width: $BREAKPOINT-960) {
+      height: 100%;
+      width: 100%;
+    }
+    @media screen and (min-width: $BREAKPOINT-600) {
+      min-height: 380px;
+      background-position: center center;
+    }
+  }
+}
+// ADD MY CLASS TO DIV TO APPLY A WASH-OUT FILTER TO ITS BG IMAGE
+.white-wash-overlay {
+  position: relative;
+  &:before {
+    background-color: #E5E5E5;
+    opacity: 0.5;
+  }
+  > div {
+    position: relative;
+    z-index: 1;
+  }
+  // VARIABLE CLASS FOR DIVs WITH BACKGROUND IMAGES THAT SCALE
+  // I NEED TO BE A CLASSED DIV WITH white-wash-overlay variable-height
+  // I NEED A BACKGROUND IMAGE
+  // MY PARENT NEEDS TO BE POSITIONED RELATIVE
+  // MY HEIGHT IS SET HERE AT 25% BUT CAN BE OVER WRITTEN
+  // IN COMPONENT FILE
+  // WITH OUT ME MY GRADIENT WILL SPILL OVER MY IMAGE
+  &.variable-height {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    min-height: 25%;
+    width: 100%;
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    @media screen and (min-width: $BREAKPOINT-960) {
+      height: 100%;
+      width: 100%;
+    }
+  }
+}
+// NEED TO ADD A DIV TO THE TOP OF A CARD AND APPLY THIS CLASS
+// TO GET THE ACCENT WITH ROUNDED CORNERS
+.top-card-accent-gradient {
+  @include primary-gradient();
+  position: absolute;
+  height: 6px;
+  top: 0;
+  left: 0px;
+  right: 0px;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 2px;
+}
+// SPINNER
+// @mixin mat-progress-spinner-theme($theme) {
+//   .mat-progress-spinner, .mat-progress-circle, .mat-spinner {
+//     path {
+//       stroke: map_get($bpf-palette, 600); // default or primary, color is teal green
+//     }
+
+//     &.mat-accent path {
+//       stroke: map_get($bpf-palette, 700); // accent, color is white
+//     }
+
+//     &.mat-warn path {
+//       stroke: map_get($bpf-palette, 50); // warn, bpf blue
+//     }
+//   }
+// }
+
+// FONTS
+// Classes should be used (and re-used!) to standardize font sizes/weights.
+// Until a functional group tackles styleguide creation and enforcement,
+// however, these are useful mixins.
+
+@mixin franklin-gothic-light($font-size: 14px, $line-height: 0)
+{
+  font-weight: 300;
+  font-family: franklin-gothic-urw, Helvetica, Arial, sans-serif;
+  font-size: $font-size;
+  @if $line-height == 1 { line-height: $font-size; }
+  @if $line-height == 2 { line-height: $font-size + ($font-size / 2);}
+}
+
+@mixin franklin-gothic-regular($font-size: 14px, $line-height: 0)
+{
+  font-weight: 400;
+  font-family: franklin-gothic-urw, Helvetica, Arial, sans-serif;
+  font-size: $font-size;
+  @if $line-height == 1 { line-height: $font-size; }
+  @if $line-height == 2 { line-height: $font-size + ($font-size / 2);}
+}
+
+@mixin franklin-gothic-medium($font-size: 14px, $line-height: 0)
+{
+  font-weight: 500;
+  font-family: franklin-gothic-urw, Helvetica, Arial, sans-serif;
+  font-size: $font-size;
+  @if $line-height == 1 { line-height: $font-size; }
+  @if $line-height == 2 { line-height: $font-size + ($font-size / 2);}
+}
+
+@mixin franklin-gothic-semi-bold($font-size: 14px, $line-height: 0)
+{
+  font-weight: 600;
+  font-family: franklin-gothic-urw, Helvetica, Arial, sans-serif;
+  font-size: $font-size;
+  @if $line-height == 1 { line-height: $font-size; }
+  @if $line-height == 2 { line-height: $font-size + ($font-size / 2);}
+}
+
+@mixin franklin-gothic-bold($font-size: 14px, $line-height: 0)
+{
+  font-weight: 700;
+  font-family: franklin-gothic-urw, Helvetica, Arial, sans-serif;
+  font-size: $font-size;
+  @if $line-height == 1 { line-height: $font-size; }
+  @if $line-height == 2 { line-height: $font-size + ($font-size / 2);}
+
+}

@@ -1,0 +1,14 @@
+.session-panel, .sms-panel {
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+
+  @media screen and (max-width: $BREAKPOINT-600) {
+    max-width: 90vw;
+  }
+
+  mat-dialog-container {
+    background: #ffffff;
+    max-width: 100%;
+  }
+}

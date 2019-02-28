@@ -1,0 +1,215 @@
+@import '../theme/variables';
+
+@media screen and (max-width: $BREAKPOINT-960) {
+  .route-margin {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+body {
+  margin: 0px;
+  font-family: franklin-gothic-urw, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  background-color: $white-ghost;
+  color: $clay-grey;
+}
+
+.bottom-navigation {
+  border-top: 1px #DCDCDC solid;
+  justify-content: flex-end;
+}
+
+.bottom-navigation-button-container {
+  margin: 20px;
+}
+
+.bottom-navigation>.button {
+  margin: 40px;
+}
+
+.route-margin {
+  margin: 30px;
+}
+
+mat-card {
+  max-width: $BREAKPOINT-1280;
+  min-width: 300px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.error {
+  color: $error-red;
+}
+
+h2,
+h3,
+h4,
+h5 {
+  color: black;
+}
+
+.break {
+  padding-bottom: 20px;
+}
+
+.helper-text {
+  font-size: 12px;
+  a {
+    font-size: 12px;
+  }
+}
+
+.set-width {
+  max-width: 650px;
+}
+
+.mat-checkbox-frame {
+  border-color: $ink-black;
+}
+
+.divider {
+  border-top-width: 2px;
+  border-top-color: $white-mist;
+  border-top-style: solid;
+  width: 100%;
+}
+
+.page-title {
+  text-align: left;
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+.page-subtitle {
+  font-weight: normal;
+  color: $clay-grey;
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+.link-text {
+  color: $thrivent-blue;
+  cursor: pointer;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.red-border {
+  border-width: 1px;
+  border-color: red;
+  border-style: solid;
+  text-align: center;
+  padding: 5%
+}
+
+.informational-box {
+  border-width: 1px;
+  border-color: $fog-grey;
+  border-style: solid;
+  text-align: center;
+  padding: 5%
+}
+
+.wrap {
+  white-space: normal;
+}
+
+h1 {
+  font-style: Light;
+  font-size: 21.43px;
+  letter-spacing: 0.25px;
+}
+
+h2 {
+  font-style: Light;
+  font-size: 64.3px;
+  letter-spacing: -0.5px;
+}
+
+h3 {
+  font-style: Light;
+  font-size: 51.44px;
+}
+
+h4 {
+  font-style: Light;
+  font-size: 36.44px;
+  letter-spacing: 0.25px;
+}
+
+h5 {
+  font-style: Light;
+  font-size: 25.72px;
+  line-height: 40px;
+}
+
+h6 {
+  font-weight: 300;
+  font-size: 21.4329px;
+  letter-spacing: 0.25px;
+}
+
+.maintext {
+  font-style: Light;
+  font-size: 15px;
+  letter-spacing: 0.25px;
+}
+
+.title-desc {
+  font-family: franklin-gothic-urw, Helvetica, Arial, sans-serif;
+  font-style: Light;
+  font-size: 17.15px;
+  letter-spacing: 0.5px;
+}
+
+.formfield {
+  font-style: Light;
+  font-size: 17.15px;
+  letter-spacing: 0.15px;
+}
+
+.subtitle2 {
+  font-style: Light;
+  font-size: 15px;
+  letter-spacing: 0.1px;
+}
+
+.button {
+  font-style: Light;
+  font-size: 15px;
+  letter-spacing: 1.25px;
+}
+
+.caption {
+  font-style: Light;
+  font-size: 12.86px;
+  letter-spacing: 0.4px;
+}
+
+.overline {
+  font-family: franklin-gothic-urw, Helvetica, Arial, sans-serif;
+  font-style: Light;
+  font-size: 12.86px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.headline {
+  border-top-width: 2px;
+  border-top-color: $thrivent-red;
+  border-top-style: solid;
+  width: 100%;
+  font-size: 22px;
+  font-weight:500;
+}

@@ -1,0 +1,37 @@
+$BREAKPOINT-600: 600px;
+$BREAKPOINT-960: 960px;
+$BREAKPOINT-1280: 1280px;
+$BREAKPOINT-1440: 1440px;
+
+$white: #fff;
+$white-ghost: #FAFAFA;
+$white-mist: #E5E5E5;
+
+$fog-grey: #B4B4B4;
+$clay-grey: #8D8F91;
+
+$charcoal-black: #404243;
+$ink-black: #292525;
+
+$thrivent-red: #D51B35;
+$thrivent-blue: #2272BA;
+$thrivent-slate: #495965;
+$thrivent-green: #007864;
+
+$cobalt-blue: #1565C0;
+$forest-green: #2AA69A;
+$error-red: $thrivent-red;
+
+$bronze: #C8A85C;
+
+$checkbox-mark-color: white;
+
+.bold {
+    font-weight: bold;
+}
+.slate {
+    color: $thrivent-slate;
+}
+.white {
+    color: $white;
+}

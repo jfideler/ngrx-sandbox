@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(new authActions.LoadAuths());
 
-// tslint:disable-next-line: deprecation
+    // tslint:disable-next-line: deprecation
     this.name$ = this.store.select(fromRoot.getFriendlyName);
   }
 }
