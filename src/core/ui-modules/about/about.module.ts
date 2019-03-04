@@ -1,17 +1,23 @@
 import { NgModule } from '@angular/core';
 import { AboutComponent } from './about.component';
-import { BpMaterialModule } from 'src/core/bp-material';
+
 import { ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { TextMaskModule } from 'angular2-text-mask';
+import { BpMaterialModule } from '../../bp-material';
+import { ValidationUtil } from '../../validation';
+
 
 
 @NgModule({
   imports: [
-    // CommonModule,
+    CommonModule,
     BpMaterialModule,
-    // FlexLayoutModule,
+    FlexLayoutModule,
     // TranslateModule.forChild(),
     ReactiveFormsModule,
-    // TextMaskModule
+    TextMaskModule
   ],
   declarations: [
     AboutComponent
@@ -20,7 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     AboutComponent
   ],
   providers: [
-    // ValidationUtil
+    ValidationUtil
   ]
 })
 export class AboutModule { }
